@@ -4,7 +4,7 @@ This project focuses on procedural terrain generation in Godot using set_cell_te
 One of the main challenges encountered is slow load times. This is primarily due to the way set_cell_terrain_connect() functions. Instead of utilizing a true Wave Function Collapse (WFC) algorithm, Godot’s built-in system relies on constraint propagation. This method checks every adjacent cell for proper terrain connections, which becomes inefficient when applied to large tilemaps. A batch-processing approach or an optimized WFC algorithm would be significantly more performant.
 
 Another major bottleneck is the lack of asynchronous or multithreaded processing in Godot’s scene system. SceneTree operations, including tile placement, are highly recommended to run on the main thread to avoid graphical inconsistencies such as missing tiles. Unfortunately, this means that terrain generation cannot take full advantage of multithreading for tasks related to rendering or texture placement. While attempts have been made to offload noise calculations to separate threads using mutexes, the inability to asynchronously modify the tilemap without causing issues remains a significant challenge.
-
+# OPTIMIZATIONS
 Optimizations are being explored to mitigate these performance limitations. Potential solutions include precomputing terrain data before placing tiles, reducing the number of per-tile checks, and experimenting with alternative terrain generation methods outside of set_cell_terrain_connect(). Additionally, the approach of using separate biomes across different maps aims to minimize the active workload while still enabling a rich, procedurally generated world.
 
 
