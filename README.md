@@ -5,7 +5,7 @@ One of the main challenges encountered is slow load times. This is primarily due
 
 Another major bottleneck is the lack of asynchronous or multithreaded processing in Godot’s scene system. SceneTree operations, including tile placement, are highly recommended to run on the main thread to avoid graphical inconsistencies such as missing tiles. Unfortunately, this means that terrain generation cannot take full advantage of multithreading for tasks related to rendering or texture placement. While attempts have been made to offload noise calculations to separate threads using mutexes, the inability to asynchronously modify the tilemap without causing issues remains a significant challenge.
 # OPTIMIZATIONS
-Optimizations are being explored to mitigate these performance limitations. Potential solutions include precomputing terrain data before placing tiles, reducing the number of per-tile checks, and experimenting with alternative terrain generation methods outside of set_cell_terrain_connect(). Additionally, the approach of using separate biomes across different maps aims to minimize the active workload while still enabling a rich, procedurally generated world.
+Optimizations are being explored to mitigate these performance limitations. Potential solutions include precomputing terrain data before placing tiles, reducing the number of per-tile checks, and experimenting with alternative terrain generation methods outside of set_cell_terrain_connect().
 
 
 
