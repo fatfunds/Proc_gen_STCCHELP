@@ -10,7 +10,7 @@ Optimizations are being explored to mitigate these performance limitations. Pote
 
 
 
-Extra Info:
+# Extra Info
 
 [TileMapLayer]([url](https://docs.godotengine.org/en/stable/classes/class_tilemaplayer.html))
 Inherits: Node2D < CanvasItem < Node < Object
