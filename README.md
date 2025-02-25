@@ -48,9 +48,9 @@ This makes them ideal for code that creates dozens of thousands of instances in 
 Scene tree
 Interacting with the active scene tree is NOT thread-safe. Make sure to use mutexes when sending data between threads. If you want to call functions from a thread, the call_deferred function may be used:
 
-# Unsafe:
+## Unsafe:
 node.add_child(child_node)
-# Safe:
+## Safe:
 node.add_child.call_deferred(child_node)
 However, creating scene chunks (nodes in tree arrangement) outside the active tree is fine. This way, parts of a scene can be built or instantiated in a thread, then added in the main thread:
 
