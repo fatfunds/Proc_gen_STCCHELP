@@ -37,3 +37,4 @@ enum SpellCategory { OFFENSIVE, DEFENSIVE, UTILITY }
 
 # Elemental Interactions
 @export var interacts_with: Array[DamageType] = []  # Types this spell interacts with
+

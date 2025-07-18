@@ -24,7 +24,7 @@ For performance reasons, all TileMap updates are batched at the end of a frame. 
 
 To force an update earlier on, call update_internals.
 
-##### Methods of TileMapLayer
+ #Methods of TileMapLayer
 
 void set_cells_terrain_connect(cells: Array[Vector2i], terrain_set: int, terrain: int, ignore_empty_terrains: bool = true) 
 
@@ -33,7 +33,7 @@ Update all the cells in the cells coordinates array so that they use the given t
 If ignore_empty_terrains is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
 Note: To work correctly, this method requires the TileMapLayer's TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
-## Thread Safe API's
+# Thread Safe API's
 Thread-safe APIs
 Threads
 Threads are used to balance processing power across CPUs and cores. Godot supports multithreading, but not in the whole engine.
@@ -48,9 +48,9 @@ This makes them ideal for code that creates dozens of thousands of instances in 
 Scene tree
 Interacting with the active scene tree is NOT thread-safe. Make sure to use mutexes when sending data between threads. If you want to call functions from a thread, the call_deferred function may be used:
 
-## Unsafe:
+Unsafe:
 node.add_child(child_node)
-## Safe:
+ Safe:
 node.add_child.call_deferred(child_node)
 However, creating scene chunks (nodes in tree arrangement) outside the active tree is fine. This way, parts of a scene can be built or instantiated in a thread, then added in the main thread:
 

@@ -1,0 +1,7 @@
+#Goals
+The goal of this system is to create a highly dynamic and interactive spell (or ability) system that can be modified on the fly. This system should allow any entity to use spells while supporting real-time adjustments to spell properties, such as visual effects, damage, speed, and size. The ultimate aim is to design a modular framework capable of handling hundreds of spells efficiently, ensuring flexibility and ease of use.
+
+#Challenges
+One of the biggest challenges in achieving this system is the visual representation of spells. Since particle effects are not yet fully understood, most spell visuals are currently drawn manually or purchased as sprite assets. This limitation restricts the variety and uniqueness of spell effects unless creative solutions involving particles and lighting are explored. Learning how to effectively use particles in Godot could significantly improve the system's visual fidelity.
+
+Another major challenge is designing a modular and scalable way to manage spells. A highly flexible system needs to allow entities to pull from a large pool of spells dynamically. While a full-fledged database could handle this, it might be overkill for the project. A more lightweight approach, such as using dictionaries or JSON files, may provide a better balance between efficiency and complexity. Currently, spells are manually assigned to entities, but a more automated approach would improve usability and scalability.
